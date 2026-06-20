@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { getRandomText } from './utils/words'
-
+import {calculateAccuracy, calculateWPM} from './utils/typingStats'
 function App() {
-  const [count, setCount] = useState(0)
   const [practiceText, setPracticeText] = useState(getRandomText());
+  const [input, setInput] = useState('');
   
   return (
     <>
@@ -14,4 +14,5 @@ function App() {
   )
 }
 
+calculateAccuracy('hello', 'helllooo');
 export default App
