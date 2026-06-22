@@ -32,6 +32,7 @@ export function useTypingTest() {
 
     const accuracy = calculateAccuracy(practiceText, typedText);
     const wpm = calculateWPM(typedText, startTime, endTime);
+    const isFinished = endTime != null;
 
-    return {practiceText, typedText, handleInput, reset, accuracy, wpm}
+    return {practiceText, typedText, handleInput, reset, accuracy, wpm, isFinished}
 }
