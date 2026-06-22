@@ -1,5 +1,6 @@
 import { TextDisplay } from './components/TextDisplay'
 import { useTypingTest } from './hooks/useTypingTest';
+import { ResultsScreen } from './components/ResultsScreen';
 
 function App() {
   const { practiceText, typedText, handleInput, reset, accuracy, wpm, isFinished } = useTypingTest();
@@ -8,16 +9,14 @@ function App() {
     if (isFinished) {
       return (
         <>
-          <p>Accuracy: {accuracy}</p>
-          <p>WPM: {wpm}</p>
-          <button onClick={reset}>Reset</button>
+          <ResultsScreen accuracy={accuracy} wpm={wpm} reset={reset}></ResultsScreen>
         </>
       )
     } else {
       return (
         <>
           <TextDisplay practiceText={practiceText} typedText={typedText}></TextDisplay>
-          <input value={typedText} onChange={(e) => handleInput(e.target.value)} />
+          <input className='outline-1' value={typedText} onChange={(e) => handleInput(e.target.value)} />
         </>
       )
     }
