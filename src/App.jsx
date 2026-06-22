@@ -1,18 +1,18 @@
 import { useState } from 'react'
-import { getRandomText } from './utils/words'
-import {calculateAccuracy, calculateWPM} from './utils/typingStats'
+import { useTypingTest } from './hooks/useTypingTest';
+
 function App() {
-  const [practiceText, setPracticeText] = useState(getRandomText());
-  const [input, setInput] = useState('');
-  
+  const { practiceText, typedText, handleInput, reset, accuracy, wpm } = useTypingTest();
+
   return (
     <>
-      <main className='h-screen w-full flex justify-center items-center p-8 bg-neutral-800 text-neutral-200'>
-        {practiceText}
-      </main>
+      <p>{practiceText}</p>
+      <input value={typedText} onChange={ (e) => handleInput(e.target.value)} />
+      <p>Accuracy: {accuracy}</p>
+      <p>WPM: {wpm}</p>
+      <button onClick={reset}>Reset</button>
     </>
   )
 }
 
-calculateAccuracy('hello', 'helllooo');
 export default App

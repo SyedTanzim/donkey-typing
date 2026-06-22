@@ -3,7 +3,7 @@ import { calculateAccuracy, calculateWPM } from '../utils/typingStats';
 import { getRandomText } from '../utils/words';
 
 
-function useTypingTest() {
+export function useTypingTest() {
 
     const [practiceText, setPracticeText] = useState(getRandomText());
     const [typedText, setTypedText] = useState('');
