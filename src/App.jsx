@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { TextDisplay } from './components/TextDisplay'
 import { useTypingTest } from './hooks/useTypingTest';
 
 function App() {
@@ -6,8 +6,8 @@ function App() {
 
   return (
     <>
-      <p>{practiceText}</p>
-      <input value={typedText} onChange={ (e) => handleInput(e.target.value)} />
+      <TextDisplay practiceText={practiceText} typedText={typedText}></TextDisplay>
+      <input value={typedText} onChange={(e) => handleInput(e.target.value)} />
       <p>Accuracy: {accuracy}</p>
       <p>WPM: {wpm}</p>
       <button onClick={reset}>Reset</button>

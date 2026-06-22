@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TextDisplay = ({ practiceText, typedText }) => {
+export const TextDisplay = ({ practiceText, typedText }) => {
 
     const characters = practiceText.split('');
 
@@ -26,5 +26,3 @@ const TextDisplay = ({ practiceText, typedText }) => {
     )
 
 }
-
-export default TextDisplay
