@@ -9,20 +9,20 @@ export const TextDisplay = ({ practiceText, typedText }) => {
 
         if (i < typedText.length) {
             if (typedText[i] == practiceText[i]) {
-                className = 'text-green-600'
+                className = 'text-green-400'
             }
             else {
-                className = 'text-red-600';
+                className = 'text-red-400';
             }
         } else {
-            className = 'text-gray-600'
+            className = 'text-gray-400'
         }
 
         return <span key={i} className={className}>{char}</span>
     })
 
     return (
-        <p>{characterElements}</p>
+        <p className='font-mono text-3xl leading-relaxed'>{characterElements}</p>
     )
 
 }
