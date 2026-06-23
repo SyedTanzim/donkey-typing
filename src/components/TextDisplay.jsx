@@ -15,14 +15,14 @@ export const TextDisplay = ({ practiceText, typedText }) => {
                 className = 'text-red-400';
             }
         } else {
-            className = 'text-gray-400'
+            className = 'text-gray-200'
         }
 
         return <span key={i} className={className}>{char}</span>
     })
 
     return (
-        <p className='font-mono text-3xl leading-relaxed'>{characterElements}</p>
+        <p className='font-mono text-4xl leading-relaxed'>{characterElements}</p>
     )
 
 }
