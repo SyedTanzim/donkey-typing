@@ -18,7 +18,14 @@ export const TextDisplay = ({ practiceText, typedText }) => {
             className = 'text-gray-200'
         }
 
-        return <span key={i} className={className}>{char}</span>
+        return (
+            <>
+                {i == typedText.length && (
+                    <span className='border-l-2 border-neutral-100 animate-pulse'></span>
+                )}
+                <span key={i} className={className}>{char}</span>
+            </>
+        )
     })
 
     return (
