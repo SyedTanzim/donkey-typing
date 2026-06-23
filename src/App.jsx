@@ -26,7 +26,7 @@ function App() {
         <h3 className='p-10 font-mono text-xl text-neutral-400'>Donkey Typing</h3>
       </nav>
 
-      <div className='flex-1 flex justify-center items-center bg-neutral-900 relative'>
+      <div className='flex-1 flex justify-center items-center bg-neutral-900 relative p-20'>
         {renderComponent()}
       </div >
 
